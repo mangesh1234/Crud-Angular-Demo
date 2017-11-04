@@ -1,0 +1,59 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+       <link rel="stylesheet" href="style.css">   
+
+    <!-- JS -->
+    <!-- load angular, nganimate, and ui-router -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script> 
+    <script src="app.js"></script>
+
+</head>
+
+<!-- apply our angular app -->
+
+<body ng-app="formApp" ng-controller="formController">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="#">Employee Portal</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+
+        <div ui-view></div>
+
+    </div>
+    <div class="pannel">
+        <h2>Employee Detail Table</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="danger">
+                    <th>Firstname</th>
+                    <th>Lastname</th>  
+                    <th>Email</th> 
+                </tr>
+            </thead>
+            <tbody ng-repeat=" element in allemployee ">
+                <tr class="success">
+                    <td>{{element.name}}</td>
+                    <td>{{element.name}}</td>
+                    <td>{{element.email}}</td>
+                    <td><button type="button" class="btn btn-default">Default</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
